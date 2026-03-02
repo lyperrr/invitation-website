@@ -1,9 +1,17 @@
 /** @format */
-
-import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Index from "@/pages/Index";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
