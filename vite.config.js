@@ -12,4 +12,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    host: true, // atau '0.0.0.0' untuk akses dari jaringan lokal
+    port: 8003,
+    open: true, // otomatis buka browser
+  },
 });
