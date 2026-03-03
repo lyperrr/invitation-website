@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Mail } from "lucide-react";
 import Typography from "./ui/typography";
+import { FadeIn, SlideInUp, ScaleIn } from "@/lib/animations";
 
 const welcomeData = {
   date: "12 Agustus 2025",
@@ -34,54 +35,72 @@ const WelcomePage = ({ isVisible, onOpenInvitation }) => {
         <div className="flex flex-col items-center justify-center h-screen">
           <div className="text-center flex flex-col items-center justify-between h-90">
             <div className="">
-              <Badge className="bg-secondary/10 backdrop-blur-md border border-secondary/20 text-white tracking-wide">
-                {welcomeData.date}
-              </Badge>
-              <Typography className="text-secondary text-sm uppercase tracking-wider mt-2!">
-                {welcomeData.label}
-              </Typography>
-              <div className="flex gap-4 items-center lg:gap-6 *:font-medium! *:text-5xl lg:*:text-6xl mt-3">
-                <div className="h-0.5 w-14 hidden md:block bg-secondary"></div>
-                <Typography
-                  variant="h1"
-                  className="text-secondary font-great-vibes"
-                >
-                  {welcomeData.bride.name}
+              <ScaleIn delay={0.2} duration={0.6}>
+                <Badge className="bg-secondary/10 backdrop-blur-md border border-secondary/20 text-white tracking-wide">
+                  {welcomeData.date}
+                </Badge>
+              </ScaleIn>
+              <FadeIn delay={0.4} duration={0.5}>
+                <Typography className="text-secondary text-sm uppercase tracking-wider mt-2!">
+                  {welcomeData.label}
                 </Typography>
-                <Typography
-                  variant="h1"
-                  className="text-secondary font-great-vibes text-6xl! lg:text-7xl!"
-                >
-                  &
-                </Typography>
-                <Typography
-                  variant="h1"
-                  className="text-secondary font-great-vibes"
-                >
-                  {welcomeData.groom.name}
-                </Typography>
-                <div className="h-0.5 w-14 hidden md:block bg-secondary"></div>
+              </FadeIn>
+              <div className="flex gap-4 items-center lg:gap-6 *:*:font-medium! *:*:text-5xl lg:*:*:text-6xl mt-3">
+                <FadeIn delay={0.8} duration={0.8}>
+                  <div className="h-0.5 w-14 hidden md:block bg-secondary"></div>
+                </FadeIn>
+                <SlideInUp delay={0.6} duration={0.6}>
+                  <Typography
+                    variant="h1"
+                    className="text-secondary font-great-vibes"
+                  >
+                    {welcomeData.bride.name}
+                  </Typography>
+                </SlideInUp>
+                <ScaleIn delay={0.9} duration={0.5}>
+                  <Typography
+                    variant="h1"
+                    className="text-secondary font-great-vibes text-6xl! lg:text-7xl!"
+                  >
+                    &
+                  </Typography>
+                </ScaleIn>
+                <SlideInUp delay={0.6} duration={0.6}>
+                  <Typography
+                    variant="h1"
+                    className="text-secondary font-great-vibes"
+                  >
+                    {welcomeData.groom.name}
+                  </Typography>
+                </SlideInUp>
+                <FadeIn delay={0.8} duration={0.8}>
+                  <div className="h-0.5 w-14 hidden md:block bg-secondary"></div>
+                </FadeIn>
               </div>
             </div>
-            <div className="">
-              <Typography
-                variant="p"
-                className="text-secondary font-medium mt-4 text-sm"
-              >
-                {welcomeData.invitation.greeting}
-              </Typography>
-              <Typography variant="h3" className="text-secondary">
-                {welcomeData.invitation.guestName}
-              </Typography>
-            </div>
+            <SlideInUp delay={1.2} duration={0.6}>
+              <div className="">
+                <Typography
+                  variant="p"
+                  className="text-secondary font-medium mt-4 text-sm"
+                >
+                  {welcomeData.invitation.greeting}
+                </Typography>
+                <Typography variant="h3" className="text-secondary">
+                  {welcomeData.invitation.guestName}
+                </Typography>
+              </div>
+            </SlideInUp>
           </div>
-          <Button
-            className="rounded-full px-8! border-2 border-primary hover:bg-transparent hover:text-secondary hover:border-accent transition-all duration-300 animate-glow-accent backdrop-blur-md mt-4"
-            onClick={onOpenInvitation}
-          >
-            {welcomeData.button.text}
-            <Mail />
-          </Button>
+          <SlideInUp delay={1.5} duration={0.6}>
+            <Button
+              className="rounded-full px-8! border-2 border-primary hover:bg-transparent hover:text-secondary hover:border-accent transition-all duration-300 animate-glow-accent backdrop-blur-md mt-4"
+              onClick={onOpenInvitation}
+            >
+              {welcomeData.button.text}
+              <Mail />
+            </Button>
+          </SlideInUp>
         </div>
       </div>
     </>
