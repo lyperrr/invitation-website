@@ -6,9 +6,20 @@ import LeftContent from "@/components/LeftContent";
 import MainPage from "./MainPage";
 
 const Index = () => {
-  const [isWelcomeVisible, setIsWelcomeVisible] = useState(false); // Set true untuk producion
+  const [isWelcomeVisible, setIsWelcomeVisible] = useState(true); // Set true untuk producion
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(
+    window.matchMedia("(min-width: 1024px)").matches
+  );
   const audioRef = useRef(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const handleMediaChange = (e) => setIsDesktop(e.matches);
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
+  }, []);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -63,13 +74,19 @@ const Index = () => {
           />
         </Motion.div>
         <Motion.main
-          initial={{ opacity: 0, y: 100, x: 100 }}
-          animate={{
-            opacity: isWelcomeVisible ? 0 : 1,
-            y: isWelcomeVisible ? 100 : 0,
-            x: isWelcomeVisible ? 100 : 0,
-          }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          initial={isDesktop ? { opacity: 0, y: 100, x: 100 } : { opacity: 1 }}
+          animate={
+            isDesktop
+              ? {
+                  opacity: isWelcomeVisible ? 0 : 1,
+                  y: isWelcomeVisible ? 100 : 0,
+                  x: isWelcomeVisible ? 100 : 0,
+                }
+              : { opacity: isWelcomeVisible ? 0 : 1 }
+          }
+          transition={
+            isDesktop ? { duration: 1, delay: 0.3, ease: "easeOut" } : {}
+          }
           className="w-full lg:w-[30%] h-screen overflow-y-auto"
         >
           <MainPage

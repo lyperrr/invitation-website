@@ -31,7 +31,7 @@ const HeroSection = () => {
   return (
     <>
       <section className="relative">
-        <div className="h-screen relative overflow-hidden bg-primary">
+        <div className="h-[85vh] md:h-[90vh] relative overflow-hidden bg-primary">
           <AnimatePresence mode="sync" initial={false}>
             <Motion.img
               key={currentIndex}
@@ -52,25 +52,25 @@ const HeroSection = () => {
             />
           </AnimatePresence>
           {/* Overlay to top */}
-          <div className="absolute bottom-0 left-0 right-0 h-70 bg-gradient-to-t from-primary via-primary/60 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-70 bg-linear-to-t from-primary via-primary/60 to-transparent"></div>
 
           {/* Information */}
           <div className="absolute flex flex-col items-center w-full justify-center z-20 *:text-secondary! text-center left-1/2 -translate-x-1/2 bottom-0">
             <Typography className="tracking-wider">{Data.title}</Typography>
             <Typography
               variant="h1"
-              className="font-great-vibes font-medium text-5xl"
+              className="font-great-vibes font-medium text-5xl mt-2"
             >
               {Data.name}
             </Typography>
-            <Typography className="tracking-wider mt-0!">
+            <Typography className="tracking-wider mt-1!">
               {Data.date}
             </Typography>
           </div>
         </div>
 
         {/* Dots indicator*/}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+        <div className="absolute bottom-6  left-1/2 -translate-x-1/2 flex gap-2 z-30">
           {images.map((_, index) => (
             <button
               key={index}

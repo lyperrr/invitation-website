@@ -14,7 +14,7 @@ const Vinyl = ({ isPlaying, onToggle }) => {
           repeat: isPlaying ? Infinity : 0,
           ease: "linear",
         }}
-        className="relative w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl"
+        className="relative w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-linear-to-br from-gray-900 via-gray-800 to-black shadow border border-secondary"
       >
         {/* Vinyl grooves - Desktop only */}
         <div className="hidden lg:block absolute inset-2 rounded-full border-2 border-gray-700/30"></div>
@@ -29,7 +29,7 @@ const Vinyl = ({ isPlaying, onToggle }) => {
         </div>
 
         {/* Shine effect */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 rounded-full bg-linear-to-br from-white/10 via-transparent to-transparent"></div>
       </Motion.div>
 
       {/* Needle/Tonearm - Desktop only */}
@@ -38,7 +38,7 @@ const Vinyl = ({ isPlaying, onToggle }) => {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="absolute -right-4 top-0 origin-top-right hidden lg:block"
       >
-        <div className="w-14 h-1 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full shadow-lg relative">
+        <div className="w-14 h-1 bg-linear-to-r from-gray-400 to-gray-600 rounded-full shadow-lg relative">
           <div className="absolute right-0 w-3 h-3 bg-secondary rounded-full -translate-y-1/2 top-1/2"></div>
         </div>
       </Motion.div>
