@@ -237,7 +237,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 font-[Montserrat];
+    @apply border-border outline-ring/50 font-montserrat;
   }
   body {
     @apply bg-background text-foreground;
@@ -255,10 +255,10 @@
     }
     50% {
       box-shadow:
+        0 0 5px var(--accent),
         0 0 10px var(--accent),
-        0 0 20px var(--accent),
-        0 0 30px var(--accent),
-        0 0 40px var(--accent);
+        0 0 15px var(--accent),
+        0 0 20px var(--accent);
     }
   }
 

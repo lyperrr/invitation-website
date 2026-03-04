@@ -45,7 +45,7 @@ const WelcomePage = ({ isVisible, onOpenInvitation }) => {
                   {welcomeData.label}
                 </Typography>
               </FadeIn>
-              <div className="flex gap-4 items-center lg:gap-6 *:*:font-medium! *:*:text-5xl lg:*:*:text-6xl mt-3">
+              <div className="flex gap-4 items-center lg:gap-6 **:font-medium! **:text-5xl lg:**:text-6xl mt-3">
                 <FadeIn delay={0.8} duration={0.8}>
                   <div className="h-0.5 w-14 hidden md:block bg-secondary"></div>
                 </FadeIn>
@@ -97,8 +97,8 @@ const WelcomePage = ({ isVisible, onOpenInvitation }) => {
               className="rounded-full px-8! border-2 border-primary hover:bg-transparent hover:text-secondary hover:border-accent transition-all duration-300 animate-glow-accent backdrop-blur-md mt-4"
               onClick={onOpenInvitation}
             >
-              {welcomeData.button.text}
               <Mail />
+              {welcomeData.button.text}
             </Button>
           </SlideInUp>
         </div>
