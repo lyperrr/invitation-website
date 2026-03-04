@@ -21,8 +21,8 @@
   --background-image-welcome-mobile:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/src/assets/image/welcome/welcome-mobile.jpg");
-
-  --radius-sm: calc(var(--radius) - 4px);
+  --background-image-potrait: url("/src/assets/image/potrait-wallpaper.png")
+    --radius-sm: calc(var(--radius) - 4px);
 
   --radius-md: calc(var(--radius) - 2px);
 

@@ -7,6 +7,7 @@ import gallery3 from "@/assets/image/gallery/gallery (3).jpg";
 import gallery4 from "@/assets/image/gallery/gallery (4).jpg";
 import gallery5 from "@/assets/image/gallery/gallery (5).jpg";
 import Typography from "../ui/typography";
+import WaveShape1 from "../shapes/WaveShape1";
 
 const images = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
@@ -85,32 +86,7 @@ const HeroSection = () => {
         </div>
 
         {/* Shape */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 1000 100"
-        >
-          <g className="fill-primary absolute -z-10">
-            <path d="M0 0h1000v4H0z"></path>
-            <path
-              d="M0 0h1000v80.8S550 100 500 100 0 80.8 0 80.8V0Z"
-              opacity=".2"
-            ></path>
-            <path
-              d="M0 0h1000v61.6S600 100 500 100 0 61.6 0 61.6V0Z"
-              opacity=".3"
-            ></path>
-            <path
-              d="M0 0h1000v42.4S650 100 500 100 0 42.4 0 42.4V0Z"
-              opacity=".4"
-            ></path>
-            <path
-              d="M0 0h1000v23.2S700 100 500 100 0 23.2 0 23.2V0Z"
-              opacity=".5"
-            ></path>
-            <path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path>
-          </g>
-        </svg>
+        <WaveShape1 />
       </section>
     </>
   );
