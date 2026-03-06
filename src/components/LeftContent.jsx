@@ -30,11 +30,13 @@ const LeftContent = ({ isMusicPlaying, onToggleMusic }) => {
           <Typography variant="h3" className="text-secondary font-great-vibes">
             {Data.name[1]}
           </Typography>
-          <div className="h-0.5 w-14 hidden md:block bg-secondary"></div>
         </div>
-        <Badge className="bg-secondary/10 backdrop-blur-md border border-secondary/20 text-white tracking-wide mt-2">
-          {Data.date}
-        </Badge>
+        <div className="flex items-center space-x-4 mt-2">
+          <Badge className="bg-secondary/10 backdrop-blur-md border border-secondary/20 text-secondary tracking-wide">
+            {Data.date}
+          </Badge>
+          <div className="h-0.5 w-full block bg-secondary" />
+        </div>
       </div>
     </>
   );

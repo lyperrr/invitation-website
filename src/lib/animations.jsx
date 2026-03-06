@@ -409,3 +409,22 @@ export const ScrollReveal = ({ children, threshold = 0.1 }) => {
     </Motion.div>
   );
 };
+
+// Template animasi untuk scroll-triggered rotation
+export const ScrollRevealRotate = ({ children, threshold = 0.1 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: threshold });
+
+  return (
+    <Motion.div
+      ref={ref}
+      initial={{ opacity: 0, rotate: -180 }}
+      animate={
+        isInView ? { opacity: 1, rotate: 0 } : { opacity: 0, rotate: -180 }
+      }
+      transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+    >
+      {children}
+    </Motion.div>
+  );
+};

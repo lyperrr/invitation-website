@@ -1,6 +1,6 @@
 /** @format */
 
-const WaveShape2 = ({ className = "", rotate = false }) => {
+const WaveShape3 = ({ className = "", rotate = false }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,4 +16,4 @@ const WaveShape2 = ({ className = "", rotate = false }) => {
   );
 };
 
-export default WaveShape2;
+export default WaveShape3;
