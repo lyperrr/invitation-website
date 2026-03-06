@@ -7,6 +7,7 @@ import { FadeIn } from "@/lib/animations";
 import HeroSection from "@/components/section/HeroSection";
 import OpeningVerse from "@/components/section/OpeningVerse";
 import Couple from "@/components/section/Couple";
+import WeddingDate from "@/components/section/WeddingDate";
 
 const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
   return (
@@ -21,6 +22,7 @@ const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
       <HeroSection />
       <OpeningVerse />
       <Couple />
+      <WeddingDate />
     </>
   );
 };
