@@ -1,13 +1,12 @@
 /** @format */
-import Typography from "@/components/ui/typography";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import Vinyl from "@/components/Vinyl";
 import { FadeIn } from "@/lib/animations";
-import HeroSection from "@/components/section/HeroSection";
-import OpeningVerse from "@/components/section/OpeningVerse";
-import Couple from "@/components/section/Couple";
-import WeddingDate from "@/components/section/WeddingDate";
+import HeroSection from "@/components/sections/HeroSection";
+import OpeningVerse from "@/components/sections/OpeningVerse";
+import Couple from "@/components/sections/Couple";
+import WeddingDate from "@/components/sections/WeddingDate";
+import DateCounter from "@/components/sections/DateCounter";
+import Gallery from "@/components/sections/Gallery";
 
 const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
   return (
@@ -23,6 +22,8 @@ const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
       <OpeningVerse />
       <Couple />
       <WeddingDate />
+      <DateCounter />
+      <Gallery />
     </>
   );
 };
