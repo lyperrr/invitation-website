@@ -5,6 +5,7 @@ import { Badge } from "./ui/badge";
 import { Mail } from "lucide-react";
 import Typography from "./ui/typography";
 import { FadeIn, SlideInUp, ScaleIn } from "@/lib/animations";
+import { useUrlParams } from "@/hooks/useUrlParams";
 
 const welcomeData = {
   date: "12 Agustus 2025",
@@ -25,6 +26,7 @@ const welcomeData = {
 };
 
 const WelcomePage = ({ isVisible, onOpenInvitation }) => {
+  const { guestName, hasGuestName } = useUrlParams();
   return (
     <>
       <div
@@ -87,7 +89,7 @@ const WelcomePage = ({ isVisible, onOpenInvitation }) => {
                   {welcomeData.invitation.greeting}
                 </Typography>
                 <Typography variant="h3" className="text-secondary">
-                  {welcomeData.invitation.guestName}
+                  {hasGuestName ? guestName : welcomeData.invitation.guestName}
                 </Typography>
               </div>
             </SlideInUp>

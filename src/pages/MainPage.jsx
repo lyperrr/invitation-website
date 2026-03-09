@@ -6,8 +6,9 @@ import OpeningVerse from "@/components/sections/OpeningVerse";
 import Couple from "@/components/sections/Couple";
 import WeddingDate from "@/components/sections/WeddingDate";
 import DateCounter from "@/components/sections/DateCounter";
-import Gallery from "@/components/sections/Gallery";
+import Gallery from "@/components/sections/gallery/Gallery";
 import DigitalGift from "@/components/sections/DigitalGift";
+import RSVP from "@/components/sections/rsvp/RSVP";
 
 const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
   return (
@@ -26,6 +27,7 @@ const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
       <DateCounter />
       <Gallery />
       <DigitalGift />
+      <RSVP />
     </>
   );
 };
