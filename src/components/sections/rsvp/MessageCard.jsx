@@ -12,6 +12,11 @@ export default function MessageCard({ submission, index }) {
   const isHadir = submission.attendance === "hadir";
   const needsExpansion = submission.message && submission.message.length > 150;
 
+  // Format jumlah tamu: hapus underscore dan ganti dengan spasi
+  const formattedGuests = submission.guests
+    ? submission.guests.toString().replace(/_/g, " ")
+    : "";
+
   return (
     <SlideInUp delay={index * 0.05} duration={0.35}>
       <div className="rounded-md border bg-card p-4 space-y-2">
@@ -42,7 +47,7 @@ export default function MessageCard({ submission, index }) {
               <XCircle className="h-3 w-3" />
             )}
             {isHadir
-              ? `Hadir${submission.guests ? ` · ${submission.guests} org` : ""}`
+              ? `Hadir${formattedGuests ? ` · ${formattedGuests}` : ""}`
               : "Tidak Hadir"}
           </Badge>
         </div>
