@@ -9,6 +9,8 @@ import DateCounter from "@/components/sections/DateCounter";
 import Gallery from "@/components/sections/gallery/Gallery";
 import DigitalGift from "@/components/sections/DigitalGift";
 import RSVP from "@/components/sections/rsvp/RSVP";
+import Closing from "@/components/sections/Closing";
+import Footer from "@/components/sections/Footer";
 
 const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
   return (
@@ -28,6 +30,8 @@ const MainPage = ({ isMusicPlaying, onToggleMusic }) => {
       <Gallery />
       <DigitalGift />
       <RSVP />
+      <Closing />
+      <Footer />
     </>
   );
 };

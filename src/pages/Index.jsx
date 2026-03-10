@@ -9,7 +9,7 @@ const Index = () => {
   const [isWelcomeVisible, setIsWelcomeVisible] = useState(true); // Set true untuk producion
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [isDesktop, setIsDesktop] = useState(
-    window.matchMedia("(min-width: 1024px)").matches
+    window.matchMedia("(min-width: 1024px)").matches,
   );
   const audioRef = useRef(null);
 
