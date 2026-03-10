@@ -1,6 +1,7 @@
 /** @format */
 import Logo from "/logo.png";
 import Typography from "../ui/typography";
+import { ScrollReveal } from "@/lib/animations";
 
 const Footer = () => {
   const whatsappNumber = "628974590050";
@@ -105,25 +106,27 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-primary py-10">
-        <div className="container">
-          <img src={Logo} alt="Logo" className="mx-auto h-16 w-16" />
-          <Typography className="text-center text-sm">
-            &copy; {new Date().getFullYear()} ArtDevata. All rights reserved.
-          </Typography>
-          <div className="flex justify-center gap-6 mt-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform duration-200 hover:scale-110"
-              >
-                {link.svg}
-              </a>
-            ))}
+        <ScrollReveal>
+          <div className="container">
+            <img src={Logo} alt="Logo" className="mx-auto h-16 w-16" />
+            <Typography className="text-center text-sm">
+              &copy; {new Date().getFullYear()} ArtDevata. All rights reserved.
+            </Typography>
+            <div className="flex justify-center gap-6 mt-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform duration-200 hover:scale-110"
+                >
+                  {link.svg}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </footer>
     </>
   );
