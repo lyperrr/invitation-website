@@ -1,6 +1,6 @@
 /** @format */
 
-const WaveShape5 = ({
+const WaveShape6 = ({
   className = "",
   rotate = false,
   fillColors = "fill-primary",
@@ -8,15 +8,13 @@ const WaveShape5 = ({
   return (
     <svg
       className={`${rotate ? "rotate-180" : ""} ${className}`}
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1000 100"
+      viewBox="0 0 436 132"
     >
-      <path
-        d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"
-        className={fillColors}
-      ></path>
+      <path className={fillColors} d="M436 0H0V132C132 0 304 0 436 132V0Z" />
     </svg>
   );
 };
 
-export default WaveShape5;
+export default WaveShape6;
