@@ -30,6 +30,7 @@ export const useRSVP = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isPaginating, setIsPaginating] = useState(false);
 
   // Helper to update form field
   const updateField = (key) => (value) => {
@@ -153,18 +154,30 @@ export const useRSVP = () => {
   const paginatedSubmissions = submissions.slice(startIndex, endIndex);
 
   const goToPage = (page) => {
-    setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+    setIsPaginating(true);
+    setTimeout(() => {
+      setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+      setIsPaginating(false);
+    }, 300);
   };
 
   const nextPage = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
+      setIsPaginating(true);
+      setTimeout(() => {
+        setCurrentPage(currentPage + 1);
+        setIsPaginating(false);
+      }, 300);
     }
   };
 
   const prevPage = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      setIsPaginating(true);
+      setTimeout(() => {
+        setCurrentPage(currentPage - 1);
+        setIsPaginating(false);
+      }, 300);
     }
   };
 
@@ -175,6 +188,7 @@ export const useRSVP = () => {
     isSubmitting,
     showSuccess,
     isLoading,
+    isPaginating,
     lastUpdate,
 
     // Pagination

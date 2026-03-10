@@ -56,7 +56,7 @@ export default function Pagination({
         size="sm"
         onClick={onPrev}
         disabled={currentPage === 1}
-        className="size-8 p-0 bg-secondary text-secondary-foreground border-secondary hover:bg-secondary/80 disabled:opacity-50"
+        className="size-8 p-0 bg-primary-foreground text-secondary-foreground border-secondary hover:bg-secondary/80 disabled:opacity-50"
       >
         <ChevronLeft className="h-4 w-4" />
       </Button>
@@ -85,7 +85,7 @@ export default function Pagination({
                 "size-8 p-0 text-xs",
                 currentPage === page
                   ? "bg-accent hover:bg-accent/80"
-                  : "bg-secondary/30 text-secondary border-secondary/40 hover:bg-secondary",
+                  : "bg-primary/70 text-secondary hover:text-secondary hover:bg-primary/80",
               ].join(" ")}
             >
               {page}
@@ -100,7 +100,7 @@ export default function Pagination({
         size="sm"
         onClick={onNext}
         disabled={currentPage === totalPages}
-        className="size-8 p-0 bg-secondary text-secondary-foreground border-secondary hover:bg-secondary/80 disabled:opacity-50"
+        className="size-8 p-0 bg-primary-foreground text-secondary-foreground border-secondary hover:bg-secondary/80 disabled:opacity-50"
       >
         <ChevronRight className="h-4 w-4" />
       </Button>

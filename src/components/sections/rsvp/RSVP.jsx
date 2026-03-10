@@ -35,6 +35,7 @@ export default function RSVP() {
     isSubmitting,
     showSuccess,
     isLoading,
+    isPaginating,
     lastUpdate,
     updateField,
     handleAttendanceChange,
@@ -45,7 +46,7 @@ export default function RSVP() {
 
   return (
     <>
-      <section className="min-h-screen bg-linear-to-t from-primary to-transparent py-10 relative">
+      <section className="min-h-screen py-10 pb-0 relative">
         <div className="container max-w-lg space-y-10">
           {/* Header */}
           <div className="text-center space-y-2">
@@ -71,7 +72,7 @@ export default function RSVP() {
           </div>
 
           {/* Form */}
-          <Card className="border-stone-200 shadow-sm rounded-xl">
+          <Card className="border-primary-foreground shadow-sm rounded-xl">
             <CardContent className="p-6 space-y-5">
               {showSuccess && <SuccessToast />}
 
@@ -175,58 +176,111 @@ export default function RSVP() {
           </Card>
 
           {/* Submissions */}
-          {submissions.length > 0 && (
-            <div className="space-y-5">
-              <div className="flex items-center gap-3">
-                <Separator className="flex-1" />
-                <div className="flex flex-col items-center gap-1 text-secondary">
-                  <div className="flex items-center gap-2">
-                    <MessageSquareHeart className="h-3.5 w-3.5" />
-                    <Typography
-                      variant="muted"
-                      className="text-[11px] font-medium tracking-widest uppercase whitespace-nowrap mt-0 text-secondary"
-                    >
-                      {submissions.length} Ucapan
-                    </Typography>
-                    <Button
-                      variant="ghost"
-                      onClick={refreshData}
-                      disabled={isLoading}
-                      className="p-1 hover:bg-accent rounded-md transition-colors disabled:opacity-50"
-                      title="Refresh data"
-                    >
-                      <RefreshCw className={isLoading ? "animate-spin" : ""} />
-                    </Button>
-                  </div>
-                  {lastUpdate && (
-                    <Typography
-                      variant="muted"
-                      className="text-[9px] mt-0 text-secondary"
-                    >
-                      Auto-refresh: {lastUpdate.toLocaleTimeString("id-ID")}
-                    </Typography>
-                  )}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <Separator className="flex-1" />
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex items-center gap-2">
+                  <MessageSquareHeart className="h-3.5 w-3.5" />
+                  <Typography
+                    variant="muted"
+                    className="text-[11px] font-medium tracking-widest uppercase whitespace-nowrap mt-0"
+                  >
+                    {submissions.length} Ucapan
+                  </Typography>
+                  <Button
+                    variant="ghost"
+                    onClick={refreshData}
+                    disabled={isLoading}
+                    className="p-1 rounded-md hover:bg-transparent transition-colors disabled:opacity-50"
+                    title="Refresh data"
+                  >
+                    <RefreshCw
+                      className={`h-4 w-4 ${isLoading ? "animate-spin" : ""}`}
+                    />
+                  </Button>
                 </div>
-                <Separator className="flex-1" />
+                {lastUpdate && (
+                  <Typography variant="muted" className="text-[9px] mt-0">
+                    Auto-refresh: {lastUpdate.toLocaleTimeString("id-ID")}
+                  </Typography>
+                )}
               </div>
+              <Separator className="flex-1" />
+            </div>
 
-              {/* Messages - No Scroll, just paginated items */}
+            {/* Loading State */}
+            {isLoading && submissions.length === 0 ? (
               <div className="space-y-2">
-                {paginatedSubmissions.map((s, i) => (
-                  <MessageCard key={s.id} submission={s} index={i} />
+                {[1, 2, 3].map((i) => (
+                  <Card
+                    key={i}
+                    className="border-primary-foreground shadow-sm animate-pulse"
+                  >
+                    <CardContent className="p-4 space-y-2">
+                      <div className="h-4 bg-muted rounded w-1/3"></div>
+                      <div className="h-3 bg-muted rounded w-full"></div>
+                      <div className="h-3 bg-muted rounded w-2/3"></div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
+            ) : submissions.length === 0 ? (
+              /* Empty State */
+              <Card className="border-primary-foreground shadow-sm">
+                <CardContent className="p-8 text-center">
+                  <MessageSquareHeart className="h-12 w-12 mx-auto mb-3 text-muted-foreground/40" />
+                  <Typography
+                    variant="p"
+                    className="text-sm text-muted-foreground"
+                  >
+                    Belum ada ucapan dan doa.
+                  </Typography>
+                  <Typography
+                    variant="muted"
+                    className="text-xs text-muted-foreground/70 mt-1"
+                  >
+                    Jadilah yang pertama memberikan ucapan!
+                  </Typography>
+                </CardContent>
+              </Card>
+            ) : (
+              /* Messages with Pagination */
+              <>
+                {isPaginating ? (
+                  <div className="space-y-2">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Card
+                        key={i}
+                        className="border-primary-foreground shadow-sm animate-pulse"
+                      >
+                        <CardContent className="p-4 space-y-2">
+                          <div className="h-4 bg-muted rounded w-1/3"></div>
+                          <div className="h-3 bg-muted rounded w-full"></div>
+                          <div className="h-3 bg-muted rounded w-2/3"></div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    {paginatedSubmissions.map((s, i) => (
+                      <MessageCard key={s.id} submission={s} index={i} />
+                    ))}
+                  </div>
+                )}
 
-              {/* Pagination */}
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={goToPage}
-                onNext={nextPage}
-                onPrev={prevPage}
-              />
-            </div>
-          )}
+                {/* Pagination */}
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={goToPage}
+                  onNext={nextPage}
+                  onPrev={prevPage}
+                />
+              </>
+            )}
+          </div>
         </div>
       </section>
     </>

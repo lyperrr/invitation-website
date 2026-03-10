@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import Typography from "@/components/ui/typography";
 import { SlideInUp } from "@/lib/animations";
 import { CheckCircle2, XCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function MessageCard({ submission, index }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -20,36 +21,36 @@ export default function MessageCard({ submission, index }) {
   return (
     <SlideInUp delay={index * 0.05} duration={0.35}>
       <div className="rounded-md border bg-card p-4 space-y-2">
-        <div className="flex items-start justify-between gap-3">
-          <div className="space-y-0.5 min-w-0">
-            <Typography
-              variant="p"
-              className="text-sm font-semibold text-foreground truncate mt-0"
-            >
-              {submission.name}
-            </Typography>
-            <Typography variant="muted" className="text-xs mt-0">
+        <div className="space-y-0.5 min-w-0">
+          <Typography
+            variant="p"
+            className="text-sm font-semibold text-foreground truncate mt-0"
+          >
+            {submission.name}
+          </Typography>
+          <div className="flex items-center justify-between">
+            <Typography variant="muted" className="text-xs my-0!">
               {submission.timestamp}
             </Typography>
+            <Badge
+              variant="outline"
+              className={[
+                "shrink-0 flex items-center gap-1 text-[11px] font-medium my-0!",
+                isHadir
+                  ? "border-success bg-success/20 text-success"
+                  : "border-destructive bg-destructive/20 text-destructive",
+              ].join(" ")}
+            >
+              {isHadir ? (
+                <CheckCircle2 className="h-3 w-3" />
+              ) : (
+                <XCircle className="h-3 w-3" />
+              )}
+              {isHadir
+                ? `Hadir${formattedGuests ? ` · ${formattedGuests}` : ""}`
+                : "Tidak Hadir"}
+            </Badge>
           </div>
-          <Badge
-            variant="outline"
-            className={[
-              "shrink-0 flex items-center gap-1 text-[11px] font-medium",
-              isHadir
-                ? "border-emerald-200 bg-emerald-50 text-emerald-700"
-                : "border-amber-200 bg-amber-50 text-amber-700",
-            ].join(" ")}
-          >
-            {isHadir ? (
-              <CheckCircle2 className="h-3 w-3" />
-            ) : (
-              <XCircle className="h-3 w-3" />
-            )}
-            {isHadir
-              ? `Hadir${formattedGuests ? ` · ${formattedGuests}` : ""}`
-              : "Tidak Hadir"}
-          </Badge>
         </div>
 
         <Separator />
@@ -68,13 +69,15 @@ export default function MessageCard({ submission, index }) {
                 &ldquo;{submission.message}&rdquo;
               </Typography>
               {needsExpansion && (
-                <button
+                <Button
                   type="button"
+                  variant="ghost"
+                  size="xs"
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="text-xs text-muted-foreground hover:text-foreground font-medium transition-colors"
+                  className="text-xs hover:bg-transparent text-accent/80 hover:text-accent font-medium transition-colors"
                 >
                   {isExpanded ? "Sembunyikan" : "Lihat selengkapnya"}
-                </button>
+                </Button>
               )}
             </>
           ) : (
