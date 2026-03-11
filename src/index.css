@@ -38,7 +38,7 @@
       transparent 75%,
       var(--color-primary) 100%
     ),
-    url("/src/assets/image/gallery/gallery%20%2817%29.jpg");
+    url("/src/assets/image/gallery/gallery(17).jpg");
   --background-image-closing:
     linear-gradient(
       to bottom,
@@ -47,7 +47,7 @@
       transparent 75%,
       var(--color-primary) 100%
     ),
-    url("/src/assets/image/gallery/gallery%20%2818%29.jpg");
+    url("/src/assets/image/gallery/gallery(18).jpg");
   --radius-sm: calc(var(--radius) - 4px);
 
   --radius-md: calc(var(--radius) - 2px);
