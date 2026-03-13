@@ -17,7 +17,7 @@ const HeroSection = () => {
   const Data = {
     title: "The Wedding of",
     name: "Agus & Mang ari",
-    date: "Sabtu, 12 April 2025",
+    date: "Rabu, 25 Maret 2026",
   };
 
   useEffect(() => {

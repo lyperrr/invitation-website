@@ -24,20 +24,20 @@ const Couple = () => {
     {
       photo: photoGroom,
       call_name: "Agus",
-      long_name: "I Made Agus Pradnya",
+      long_name: "Kadek Agus Pradnya Dwiarta",
       from_child: 2,
-      parent_name: "I Made Bagus & I Nyoman Sari",
+      parent_name: "I Ketut Sandra & Ni Wayan Lesmiyanti.SE",
       address:
-        "Jalan Raya Kediri No. 123, Desa Kediri, Kecamatan Kediri, Kabupaten Badung",
+        "Br. Lebah, Desa Tista, Kerambitan, Tabanan",
     },
     {
       photo: photoBride,
-      call_name: "Mang ari",
+      call_name: "Mang Ari",
       long_name: "Ni Komang Ari Anggreni",
       from_child: 3,
-      parent_name: "I Made Anggreni & I Nyoman Sari",
+      parent_name: "I Wayan Muja & Ni Made Wiyastri",
       address:
-        "Jalan Raya Kediri No. 123, Desa Kediri, Kecamatan Kediri, Kabupaten Badung",
+        "Br. Juntal, Desa Kaba-kaba, Kediri, Tabanan",
     },
   ];
   return (

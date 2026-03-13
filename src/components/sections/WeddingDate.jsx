@@ -14,15 +14,15 @@ import {
 const WeddingDate = () => {
   const weddingData = {
     date: {
-      day: 12,
-      month: "Mei",
+      day: 25,
+      month: "Maret",
       year: 2026,
     },
     event: {
       type: "Resepsi",
-      time: "16:00 - SELESAI",
-      location: "Gedung Sate, Jl. Raya Kuta",
-      mapLink: "", // URL untuk petunjuk arah
+      time: "17:00 - SELESAI",
+      location: "Br. Lebah, Desa Tista, Kerambitan, Tabanan",
+      mapLink: "https://maps.app.goo.gl/mBcok8Rcc3WxMAeJ7", // URL untuk petunjuk arah
     },
     messages: {
       invitation:
