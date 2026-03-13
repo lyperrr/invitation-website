@@ -4,7 +4,7 @@ import Typography from "../ui/typography";
 import { ScrollReveal, ScaleIn } from "../../lib/animations";
 
 const DateCounter = () => {
-  const weddingDate = new Date("2026-03-25T10:00:00+08:00");
+  const weddingDate = new Date("2026-03-25T17:00:00+08:00");
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
