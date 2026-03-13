@@ -18,10 +18,10 @@ const DigitalGift = () => {
     bankAccounts: [
       {
         id: 1,
-        bankName: "Bank Mandiri",
-        accountNumber: "1234567890123",
-        accountDisplay: "1234 5678 9012 3",
-        holderName: "I Made Agus Pradnya",
+        bankName: "Bank BCA",
+        accountNumber: "1350934355",
+        accountDisplay: "1350 9343 55",
+        holderName: "Agus Pradnya Dwi Arta",
       },
       // {
       //   id: 2,

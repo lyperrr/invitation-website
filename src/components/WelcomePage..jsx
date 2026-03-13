@@ -8,13 +8,13 @@ import { FadeIn, SlideInUp, ScaleIn } from "@/lib/animations";
 import { useUrlParams } from "@/hooks/useUrlParams";
 
 const welcomeData = {
-  date: "12 Agustus 2025",
+  date: "25 Maret 2026",
   label: "Pawiwahan",
   bride: {
     name: "Agus",
   },
   groom: {
-    name: "Mang ari",
+    name: "Mang Ari",
   },
   invitation: {
     greeting: "Kepada Yth. Bapak/Ibu/Saudara/i",

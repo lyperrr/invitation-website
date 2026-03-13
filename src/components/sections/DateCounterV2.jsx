@@ -137,7 +137,7 @@ const DateCounter2 = () => {
 
           {/* ── date ── */}
           <Typography className="text-center italic text-primary tracking-wide mb-8">
-            Sabtu, 25 Maret 2026 &nbsp;·&nbsp; 10.00 WITA
+            Rabu, 25 Maret 2026 &nbsp;·&nbsp; 17.00 WITA
           </Typography>
 
           {/* ── counter ── */}

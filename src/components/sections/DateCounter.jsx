@@ -61,7 +61,7 @@ const DateCounter = () => {
               Menuju Hari Bahagia
             </Typography>
             <Typography className="italic text-primary text-center tracking-wide mt-0! mb-8">
-              Sabtu, 25 Maret 2026 &nbsp;·&nbsp; 10.00 WITA
+              Rabu, 25 Maret 2026 &nbsp;·&nbsp; 17.00 WITA
             </Typography>
           </div>
 
