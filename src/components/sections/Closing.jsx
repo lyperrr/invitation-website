@@ -10,7 +10,7 @@ const Closing = () => {
   };
   return (
     <>
-      <section className="min-h-screen bg-closing bg-center bg-cover bg-no-repeat relative mt-">
+      <section className="min-h-screen bg-closing bg-center bg-cover bg-no-repeat relative mt-10">
         <WaveShape6 fillColors="fill-background" />
         <div className="container flex items-end justify-center min-h-screen">
           {/* Information */}
