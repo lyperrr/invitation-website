@@ -34,6 +34,9 @@ import gallery22 from "@/assets/image/gallery/gallery(22).jpg";
 import gallery23 from "@/assets/image/gallery/gallery(23).jpg";
 import gallery24 from "@/assets/image/gallery/gallery(24).jpg";
 import gallery25 from "@/assets/image/gallery/gallery(25).jpg";
+import gallery26 from "@/assets/image/gallery/gallery(26).jpg";
+import gallery27 from "@/assets/image/gallery/gallery(27).jpg";
+import gallery28 from "@/assets/image/gallery/gallery(28).jpg";
 
 const Gallery = () => {
   // Gallery images array
@@ -42,6 +45,7 @@ const Gallery = () => {
     gallery4,
     gallery22,
     gallery9,
+    gallery27,
     gallery1,
     gallery13,
     gallery25,
@@ -52,6 +56,7 @@ const Gallery = () => {
     gallery8,
     gallery21,
     gallery11,
+    gallery28,
     gallery2,
     gallery24,
     gallery7,
@@ -61,6 +66,7 @@ const Gallery = () => {
     gallery23,
     gallery12,
     gallery20,
+    gallery26,
     gallery15,
     gallery18,
   ];
