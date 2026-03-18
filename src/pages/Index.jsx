@@ -47,7 +47,7 @@ const Index = () => {
       {/* Single Audio Element for entire app */}
       <audio ref={audioRef} loop>
         <source
-          src="/src/assets/music/gus-teja-morning-happiness.mp3"
+          src="/src/assets/music/ary-kencana-seribu-bidadari.mp3"
           type="audio/mpeg"
         />
       </audio>
