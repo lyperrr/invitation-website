@@ -1,7 +1,9 @@
 /** @format */
 
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Pagination({
   currentPage,
@@ -10,6 +12,16 @@ export default function Pagination({
   onNext,
   onPrev,
 }) {
+  const [isInputVisible, setIsInputVisible] = useState(null);
+  const [jumpValue, setJumpValue] = useState("");
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (isInputVisible !== null && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isInputVisible]);
+
   if (totalPages <= 1) return null;
 
   const getPageNumbers = () => {
@@ -48,6 +60,28 @@ export default function Pagination({
     return pages;
   };
 
+  const handleEllipsisClick = (index) => {
+    setIsInputVisible(index);
+    setJumpValue("");
+  };
+
+  const handleInputSubmit = () => {
+    const page = parseInt(jumpValue, 10);
+    if (!isNaN(page) && page >= 1 && page <= totalPages) {
+      onPageChange(page);
+    }
+    setIsInputVisible(null);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleInputSubmit();
+    }
+    if (e.key === "Escape") {
+      setIsInputVisible(null);
+    }
+  };
+
   return (
     <div className="flex items-center justify-center gap-2 py-4">
       {/* Previous Button */}
@@ -65,13 +99,34 @@ export default function Pagination({
       <div className="flex items-center gap-1">
         {getPageNumbers().map((page, index) => {
           if (page === "...") {
+            if (isInputVisible === index) {
+              return (
+                <div key={`ellipsis-input-${index}`} className="w-10">
+                  <Input
+                    ref={inputRef}
+                    type="number"
+                    value={jumpValue}
+                    onChange={(e) => setJumpValue(e.target.value)}
+                    onBlur={handleInputSubmit}
+                    onKeyDown={handleKeyDown}
+                    className="h-8 px-1 text-center text-xs w-full bg-white text-black font-medium"
+                    min={1}
+                    max={totalPages}
+                  />
+                </div>
+              );
+            }
             return (
-              <span
+              <Button
                 key={`ellipsis-${index}`}
-                className="px-2 text-secondary/40 text-sm"
+                variant="ghost"
+                size="sm"
+                className="size-8 p-0 text-secondary/40 hover:text-secondary hover:bg-black/5 rounded-full"
+                onClick={() => handleEllipsisClick(index)}
+                title="Jump to page"
               >
-                ...
-              </span>
+                <MoreHorizontal className="h-4 w-4" />
+              </Button>
             );
           }
 
