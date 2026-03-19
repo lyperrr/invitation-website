@@ -1,13 +1,14 @@
 /** @format */
 
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Mail } from "lucide-react";
 import Typography from "./ui/typography";
 import { FadeIn, SlideInUp, ScaleIn } from "@/lib/animations";
 import { useUrlParams } from "@/hooks/useUrlParams";
-import welcomeDesktop from "@/assets/image/welcome/welcome-desktop.jpg";
-import welcomeMobile from "@/assets/image/welcome/welcome-mobile.jpg";
+import bgDesktop from "@/assets/image/welcome/welcome-desktop.jpg";
+import bgMobile from "@/assets/image/welcome/welcome-mobile.jpg";
 
 const welcomeData = {
   date: "25 Maret 2026",
@@ -29,15 +30,31 @@ const welcomeData = {
 
 const WelcomePage = ({ isVisible, onOpenInvitation }) => {
   const { guestName, hasGuestName } = useUrlParams();
+  const [bgImage, setBgImage] = useState(bgDesktop);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBgImage(bgMobile);
+      } else {
+        setBgImage(bgDesktop);
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div
-        className="bg-[image:var(--bg-mobile)] lg:bg-[image:var(--bg-desktop)] bg-cover bg-no-repeat bg-center h-screen fixed inset-0 z-50 transition-transform duration-1000 ease-in-out"
         style={{
-          "--bg-mobile": `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${welcomeMobile})`,
-          "--bg-desktop": `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${welcomeDesktop})`,
-          transform: isVisible ? "translateY(0)" : "translateY(-100%)",
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${bgImage}")`,
         }}
+        className={`bg-cover bg-center bg-no-repeat h-screen fixed inset-0 z-50 transition-transform duration-1000 ease-in-out ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
       >
         <div className="flex flex-col items-center justify-center h-screen">
           <div className="text-center flex flex-col items-center justify-between h-90">
