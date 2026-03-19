@@ -20,7 +20,7 @@ const LeftContent = ({ isMusicPlaying, onToggleMusic }) => {
       </FadeIn>
 
       <div className="absolute bottom-7 left-7">
-        <div className="flex items-center space-x-4 *:font-medium! *:text-5xl">
+        <div className="flex items-center space-x-4 *:font-medium! *:text-7xl">
           <Typography variant="h3" className="text-secondary font-great-vibes">
             {Data.name[0]}
           </Typography>

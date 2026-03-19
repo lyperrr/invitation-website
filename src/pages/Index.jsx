@@ -67,7 +67,7 @@ const Index = () => {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="w-[70%] bg-cover bg-center h-screen hidden lg:block overflow-hidden relative border-r border-accent"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${welcomeDesktop})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${welcomeDesktop})`,
           }}
         >
           <LeftContent
