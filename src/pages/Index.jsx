@@ -1,6 +1,6 @@
 /** @format */
 import { useState, useRef, useEffect } from "react";
-import WelcomePage from "@/components/WelcomePage..jsx";
+import WelcomePage from "@/components/WelcomePage.jsx";
 import { motion as Motion, AnimatePresence } from "motion/react";
 import LeftContent from "@/components/LeftContent";
 import MainPage from "./MainPage";
