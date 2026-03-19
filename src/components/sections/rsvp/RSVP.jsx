@@ -14,7 +14,13 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import Typography from "@/components/ui/typography";
-import { Send, MessageSquareHeart, RefreshCw, Loader2 } from "lucide-react";
+import {
+  Send,
+  MessageSquareHeart,
+  RefreshCw,
+  Loader2,
+  AlertCircle,
+} from "lucide-react";
 
 import { useRSVP } from "@/hooks/useRSVP";
 import AttendanceToggle from "./AttendanceToggle";
@@ -35,6 +41,7 @@ export default function RSVP() {
     prevPage,
     isSubmitting,
     showSuccess,
+    validationError,
     isLoading,
     isPaginating,
     lastUpdate,
@@ -42,7 +49,6 @@ export default function RSVP() {
     handleAttendanceChange,
     handleSubmit,
     refreshData,
-    isFormValid,
   } = useRSVP();
 
   return (
@@ -79,6 +85,12 @@ export default function RSVP() {
             <Card className="border-primary-foreground shadow-sm rounded-xl">
               <CardContent className="p-6 space-y-5">
                 {showSuccess && <SuccessToast />}
+                {validationError && (
+                  <div className="flex items-center gap-3 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 animate-in fade-in slide-in-from-top-2">
+                    <AlertCircle className="h-4 w-4 shrink-0 text-red-600" />
+                    <span>{validationError}</span>
+                  </div>
+                )}
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Nama */}
@@ -160,7 +172,7 @@ export default function RSVP() {
                   {/* Submit */}
                   <Button
                     type="submit"
-                    disabled={isSubmitting || !isFormValid}
+                    disabled={isSubmitting}
                     className="w-full h-10 text-sm font-medium tracking-widest"
                   >
                     {isSubmitting ? (

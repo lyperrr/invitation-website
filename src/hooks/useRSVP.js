@@ -27,6 +27,7 @@ export const useRSVP = () => {
   const [submissions, setSubmissions] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [validationError, setValidationError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,6 +36,7 @@ export const useRSVP = () => {
   // Helper to update form field
   const updateField = (key) => (value) => {
     setForm((prev) => ({ ...prev, [key]: value }));
+    if (validationError) setValidationError(null);
   };
 
   // Handle attendance change
@@ -44,6 +46,7 @@ export const useRSVP = () => {
       attendance: value,
       guests: value === "tidak_hadir" ? "" : prev.guests,
     }));
+    if (validationError) setValidationError(null);
   };
 
   // Refresh data from spreadsheet
@@ -85,7 +88,21 @@ export const useRSVP = () => {
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.attendance) return;
+    setValidationError(null);
+
+    // Form Validation
+    if (!form.name.trim()) {
+      setValidationError("Silakan isi nama Anda terlebih dahulu.");
+      return;
+    }
+    if (!form.attendance) {
+      setValidationError("Silakan pilih konfirmasi kehadiran.");
+      return;
+    }
+    if (form.attendance === "hadir" && !form.guests) {
+      setValidationError("Silakan pilih jumlah tamu yang akan hadir.");
+      return;
+    }
 
     setIsSubmitting(true);
     try {
@@ -187,6 +204,7 @@ export const useRSVP = () => {
     submissions,
     isSubmitting,
     showSuccess,
+    validationError,
     isLoading,
     isPaginating,
     lastUpdate,
@@ -206,6 +224,9 @@ export const useRSVP = () => {
     refreshData,
 
     // Computed
-    isFormValid: form.name.trim() && form.attendance,
+    isFormValid:
+      form.name.trim() &&
+      form.attendance &&
+      (form.attendance !== "hadir" || form.guests),
   };
 };
