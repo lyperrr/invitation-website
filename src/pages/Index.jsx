@@ -5,7 +5,7 @@ import { motion as Motion, AnimatePresence } from "motion/react";
 import LeftContent from "@/components/LeftContent";
 import MainPage from "./MainPage";
 import musicSrc from "@/assets/music/ary-kencana-seribu-bidadari.mp3";
-import welcomeDesktop from "@/assets/image/welcome/welcome-desktop.jpg";
+import welcomeDesktop from "@/assets/image/gallery/gallery(1).jpg";
 
 const Index = () => {
   const [isWelcomeVisible, setIsWelcomeVisible] = useState(true); // Set true untuk producion
@@ -67,7 +67,7 @@ const Index = () => {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="w-[70%] bg-cover bg-center h-screen hidden lg:block overflow-hidden relative border-r border-accent"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${welcomeDesktop})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("${welcomeDesktop}")`,
           }}
         >
           <LeftContent
