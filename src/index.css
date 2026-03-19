@@ -16,10 +16,10 @@
   --font-playfair: "Playfair Display", serif;
 
   --background-image-welcome-desktop:
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("./assets/image/welcome/welcome-desktop.jpg");
   --background-image-welcome-mobile:
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("./assets/image/welcome/welcome-mobile.jpg");
   --background-image-wallpaper-potrait:
     linear-gradient(

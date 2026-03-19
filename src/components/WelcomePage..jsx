@@ -6,6 +6,8 @@ import { Mail } from "lucide-react";
 import Typography from "./ui/typography";
 import { FadeIn, SlideInUp, ScaleIn } from "@/lib/animations";
 import { useUrlParams } from "@/hooks/useUrlParams";
+import welcomeDesktop from "@/assets/image/welcome/welcome-desktop.jpg";
+import welcomeMobile from "@/assets/image/welcome/welcome-mobile.jpg";
 
 const welcomeData = {
   date: "25 Maret 2026",
@@ -30,9 +32,12 @@ const WelcomePage = ({ isVisible, onOpenInvitation }) => {
   return (
     <>
       <div
-        className={`bg-welcome-mobile lg:bg-welcome-desktop bg-cover bg-no-repeat bg-center h-screen fixed inset-0 z-50 transition-transform duration-1000 ease-in-out ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className="bg-[image:var(--bg-mobile)] lg:bg-[image:var(--bg-desktop)] bg-cover bg-no-repeat bg-center h-screen fixed inset-0 z-50 transition-transform duration-1000 ease-in-out"
+        style={{
+          "--bg-mobile": `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${welcomeMobile})`,
+          "--bg-desktop": `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${welcomeDesktop})`,
+          transform: isVisible ? "translateY(0)" : "translateY(-100%)",
+        }}
       >
         <div className="flex flex-col items-center justify-center h-screen">
           <div className="text-center flex flex-col items-center justify-between h-90">

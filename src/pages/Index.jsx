@@ -5,6 +5,7 @@ import { motion as Motion, AnimatePresence } from "motion/react";
 import LeftContent from "@/components/LeftContent";
 import MainPage from "./MainPage";
 import musicSrc from "@/assets/music/ary-kencana-seribu-bidadari.mp3";
+import welcomeDesktop from "@/assets/image/welcome/welcome-desktop.jpg";
 
 const Index = () => {
   const [isWelcomeVisible, setIsWelcomeVisible] = useState(true); // Set true untuk producion
@@ -64,7 +65,10 @@ const Index = () => {
             x: isWelcomeVisible ? -100 : 0,
           }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="w-[70%] bg-welcome-desktop bg-cover bg-center h-screen hidden lg:block overflow-hidden relative border-r border-accent"
+          className="w-[70%] bg-cover bg-center h-screen hidden lg:block overflow-hidden relative border-r border-accent"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${welcomeDesktop})`,
+          }}
         >
           <LeftContent
             isMusicPlaying={isMusicPlaying}

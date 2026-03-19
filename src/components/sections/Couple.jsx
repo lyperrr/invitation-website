@@ -18,6 +18,7 @@ import {
 // Import foto mempelai
 import photoGroom from "@/assets/image/couple/Pengantin Laki-Laki.png"; // Ganti dengan path foto yang benar
 import photoBride from "@/assets/image/couple/Pengantin Perempuan.png"; // Ganti dengan path foto yang benar
+import portraitWallpaper from "@/assets/image/potrait-wallpaper.png";
 
 const Couple = () => {
   const CoupleData = [
@@ -27,8 +28,7 @@ const Couple = () => {
       long_name: "Kadek Agus Pradnya Dwiarta",
       from_child: 2,
       parent_name: "I Ketut Sandra & Ni Wayan Lesmiyanti.SE",
-      address:
-        "Br. Lebah, Desa Tista, Kerambitan, Tabanan",
+      address: "Br. Lebah, Desa Tista, Kerambitan, Tabanan",
     },
     {
       photo: photoBride,
@@ -36,15 +36,19 @@ const Couple = () => {
       long_name: "Ni Komang Ari Anggreni",
       from_child: 3,
       parent_name: "I Wayan Muja & Ni Made Wiyastri",
-      address:
-        "Br. Juntal, Desa Kaba-kaba, Kediri, Tabanan",
+      address: "Br. Juntal, Desa Kaba-kaba, Kediri, Tabanan",
     },
   ];
   return (
     <>
       <section className="pt-10">
         <WaveShape3 rotate={true} />
-        <div className="container py-10 pb-16 bg-wallpaper-potrait bg-cover bg-center">
+        <div
+          className="container py-10 pb-16 bg-cover bg-center"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, var(--color-primary) 0%, transparent 25%, transparent 75%, var(--color-primary) 100%), url(${portraitWallpaper})`,
+          }}
+        >
           <StaggerContainer staggerDelay={0.4}>
             <StaggerItem>
               <ScrollReveal>

@@ -2,6 +2,8 @@
 import Typography from "../ui/typography";
 import WaveShape6 from "../shapes/WaveShape6";
 import { ScrollReveal } from "@/lib/animations";
+import closingBg from "@/assets/image/gallery/gallery(18).jpg";
+
 const Closing = () => {
   const Data = {
     couple_name: "Agus & Mang ari",
@@ -10,7 +12,12 @@ const Closing = () => {
   };
   return (
     <>
-      <section className="min-h-screen bg-closing bg-center bg-cover bg-no-repeat relative mt-10">
+      <section
+        className="min-h-screen bg-center bg-cover bg-no-repeat relative mt-10"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, var(--color-primary) 0%, transparent 0%, transparent 75%, var(--color-primary) 100%), url("${closingBg}")`,
+        }}
+      >
         <WaveShape6 fillColors="fill-background" />
         <div className="container flex items-end justify-center min-h-screen">
           {/* Information */}
