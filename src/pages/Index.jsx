@@ -4,6 +4,7 @@ import WelcomePage from "@/components/WelcomePage..jsx";
 import { motion as Motion, AnimatePresence } from "motion/react";
 import LeftContent from "@/components/LeftContent";
 import MainPage from "./MainPage";
+import musicSrc from "@/assets/music/ary-kencana-seribu-bidadari.mp3";
 
 const Index = () => {
   const [isWelcomeVisible, setIsWelcomeVisible] = useState(true); // Set true untuk producion
@@ -46,10 +47,7 @@ const Index = () => {
     <>
       {/* Single Audio Element for entire app */}
       <audio ref={audioRef} loop>
-        <source
-          src="/src/assets/music/ary-kencana-seribu-bidadari.mp3"
-          type="audio/mpeg"
-        />
+        <source src={musicSrc} type="audio/mpeg" />
       </audio>
 
       <div className="flex h-screen overflow-hidden">
