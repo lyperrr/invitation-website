@@ -28,7 +28,7 @@ const WeddingDate = () => {
     messages: {
       invitation:
         "Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir untuk memberikan doa restu.",
-      blessing: "Om Santhi Santhi Santhi Om",
+      blessing: "Om Shanti Shanti Shanti Om",
     },
   };
 
