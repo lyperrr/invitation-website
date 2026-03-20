@@ -27,7 +27,7 @@ const Couple = () => {
       call_name: "Agus",
       long_name: "Kadek Agus Pradnya Dwiarta",
       from_child: 2,
-      parent_name: "I Ketut Sandra & Ni Wayan Lesmiyanti.SE",
+      parent_name: "I Ketut Sandra & Ni Wayan Lesmiyanti.S.E",
       address: "Br. Lebah, Desa Tista, Kerambitan, Tabanan",
     },
     {
