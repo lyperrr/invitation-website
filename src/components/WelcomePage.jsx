@@ -97,7 +97,8 @@ const WelcomePage = ({ isVisible, onOpenInvitation }) => {
           </div>
           <SlideInUp delay={1.5} duration={0.6}>
             <Button
-              className="rounded-full px-8! border-2 border-primary hover:bg-transparent hover:text-secondary hover:border-accent transition-all duration-300 animate-glow-accent backdrop-blur-md mt-4"
+              size="lg"
+              className="rounded-full px-8! md:px-16! border-2 border-primary hover:bg-transparent hover:text-secondary hover:border-accent transition-all duration-300 animate-glow-accent backdrop-blur-md mt-4"
               onClick={onOpenInvitation}
             >
               <Mail />
