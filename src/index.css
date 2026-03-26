@@ -17,11 +17,11 @@
 
   --background-image-welcome-desktop:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/public/image/welcome/welcome-desktop.jpg");
+    url("/image/welcome/welcome-desktop.jpg");
 
   --background-image-welcome-mobile:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/public/image/welcome/welcome-mobile.jpg");
+    url("/image/welcome/welcome-mobile.jpg");
 
   --background-image-left-content-desktop:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
