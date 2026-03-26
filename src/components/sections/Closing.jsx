@@ -12,12 +12,7 @@ const Closing = () => {
   };
   return (
     <>
-      <section
-        className="min-h-screen bg-center bg-closing bg-cover bg-no-repeat relative mt-10"
-        // style={{
-        //   backgroundImage: `linear-gradient(to bottom, var(--color-primary) 0%, transparent 0%, transparent 75%, var(--color-primary) 100%), url("${closingBg}")`,
-        // }}
-      >
+      <section className="min-h-screen bg-center bg-closing bg-cover bg-no-repeat relative mt-10">
         <WaveShape6 fillColors="fill-background" />
         <div className="container flex items-end justify-center min-h-screen">
           {/* Information */}
