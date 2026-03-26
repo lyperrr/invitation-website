@@ -2,7 +2,6 @@
 import Typography from "../ui/typography";
 import WaveShape6 from "../shapes/WaveShape6";
 import { ScrollReveal } from "@/lib/animations";
-// import closingBg from "@/assets/image/gallery/gallery(18).jpg";
 
 const Closing = () => {
   const Data = {
