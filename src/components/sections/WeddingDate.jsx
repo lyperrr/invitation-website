@@ -10,7 +10,6 @@ import {
   StaggerItem,
   ScrollReveal,
 } from "../../lib/animations";
-import weddingBg from "@/assets/image/gallery/gallery(17).jpg";
 
 const WeddingDate = () => {
   const weddingData = {
@@ -67,10 +66,7 @@ const WeddingDate = () => {
     <>
       <section
         ref={sectionRef}
-        style={{
-          backgroundImage: `linear-gradient(to bottom, var(--color-primary) 0%, transparent 25%, transparent 75%, var(--color-primary) 100%), url("${weddingBg}")`,
-        }}
-        className="bg-cover bg-center bg-no-repeat h-screen"
+        className="bg-cover bg-center bg-no-repeat bg-wedding-date h-screen"
       >
         <div className="container h-full flex items-center">
           <ScrollReveal threshold={0.3}>

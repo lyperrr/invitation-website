@@ -17,7 +17,6 @@ import {
 } from "../../lib/animations";
 import photoGroom from "@/assets/image/couple/Pengantin Laki-Laki.png"; // Ganti dengan path foto yang benar
 import photoBride from "@/assets/image/couple/Pengantin Perempuan.png"; // Ganti dengan path foto yang benar
-// import portraitWallpaper from "@/assets/image/potrait-wallpaper.png";
 
 const Couple = () => {
   const CoupleData = [
@@ -42,12 +41,7 @@ const Couple = () => {
     <>
       <section className="pt-10">
         <WaveShape3 rotate={true} />
-        <div
-          className="container py-10 pb-16 bg-cover bg-wallpaper-potrait bg-center"
-          // style={{
-          //   backgroundImage: `linear-gradient(to bottom, var(--color-primary) 0%, transparent 25%, transparent 75%, var(--color-primary) 100%), url(${portraitWallpaper})`,
-          // }}
-        >
+        <div className="container py-10 pb-16 bg-cover bg-wallpaper-potrait bg-center">
           <StaggerContainer staggerDelay={0.4}>
             <StaggerItem>
               <ScrollReveal>
