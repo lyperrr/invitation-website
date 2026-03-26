@@ -25,7 +25,7 @@
 
   --background-image-left-content-desktop:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/src/assets/image/gallery/gallery(1).jpg");
+    url("/image/left-content-desktop.jpg");
 
   --background-image-wallpaper-potrait:
     linear-gradient(
