@@ -49,10 +49,7 @@ const WelcomePage = ({ isVisible, onOpenInvitation }) => {
   return (
     <>
       <div
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${bgImage}")`,
-        }}
-        className={`bg-cover bg-center bg-no-repeat h-screen fixed inset-0 z-50 transition-transform duration-1000 ease-in-out ${
+        className={`bg-cover bg-center bg-no-repeat h-screen bg-welcome-mobile md:bg-welcome-desktop fixed inset-0 z-50 transition-transform duration-1000 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
