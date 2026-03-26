@@ -1,14 +1,11 @@
 /** @format */
 
-import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Mail } from "lucide-react";
 import Typography from "./ui/typography";
 import { FadeIn, SlideInUp, ScaleIn } from "@/lib/animations";
 import { useUrlParams } from "@/hooks/useUrlParams";
-import bgDesktop from "@/assets/image/welcome/welcome-desktop.jpg";
-import bgMobile from "@/assets/image/welcome/welcome-mobile.jpg";
 
 const welcomeData = {
   date: "25 Maret 2026",
@@ -30,21 +27,6 @@ const welcomeData = {
 
 const WelcomePage = ({ isVisible, onOpenInvitation }) => {
   const { guestName, hasGuestName } = useUrlParams();
-  const [bgImage, setBgImage] = useState(bgDesktop);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setBgImage(bgMobile);
-      } else {
-        setBgImage(bgDesktop);
-      }
-    };
-
-    handleResize(); // Initial check
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <>
